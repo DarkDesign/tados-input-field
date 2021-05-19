@@ -80,7 +80,6 @@ $color: [
   *{
     transition: all .3s;
     font-size: 16px;
-    font-family: "OpenSans";
   }
   .input{
     width: 100%;
