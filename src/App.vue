@@ -2,9 +2,6 @@
   <div id="app">
     <div class="inputList">
       <div class="inputList__item">
-        <p>Нет поддержки Safari и прочих интернет эксплореров.</p>
-      </div>
-      <div class="inputList__item">
         <input-filed
             v-model="value"
             :label="`Label`"
