@@ -1,5 +1,5 @@
 <template>
-  <div class="input-filed">
+  <div class="input-field">
     <input type="text" class="input"
            :class="{'input-nonempty': value.length > 0, 'input-error': error}"
            :value="value"
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "input-filed",
+  name: "input-field",
   props:{
     value:{
       type: String,
@@ -50,7 +50,7 @@ export default {
     }
   },
   watch:{
-    value:function (newValue, oldValue){
+    value:function (newValue, oldValue) {
       if(this.required) this.error = (oldValue.length > 0 && newValue.length === 0)
     }
   }
@@ -64,22 +64,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$color: (
-    value: #ffffff,
-    label: #9d9daf,
-    primary: #848595,
-    secondary: #6b6c7b,
-    focus: #006ac7,
-    error: #e84640
+$colors:(
+  value: #ffffff,
+  label: #9d9daf,
+  primary: #848595,
+  secondary: #6b6c7b,
+  focus: #006ac7,
+  error: #e84640
 );
-.input-filed {
+.input-field {
   position: relative;
   width: 100%;
   *{
     transition: all .3s;
     font-size: 16px;
   }
-  .input{
+  .input {
     width: 100%;
     height: 48px;
     outline: none;
@@ -87,44 +87,44 @@ $color: (
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     text-overflow: ellipsis;
-    background-color: rgba(map-get($color, primary), 0.15);
-    box-shadow: inset 0 -1px 0 0 map-get($color, secondary);
-    color: map-get($color, value);
-    &:focus{
-      box-shadow: inset 0 -2px 0 0 map-get($color, focus);
-      &+ label {
+    background-color: rgba(map-get($colors, primary), 0.15);
+    box-shadow: inset 0 -1px 0 0 map-get($colors, secondary);
+    color: map-get($colors, value);
+    &:focus {
+      box-shadow: inset 0 -2px 0 0 map-get($colors, focus);
+      & + label {
         transform: scale(0.7) translate(-10px, -16px);
       }
     }
-    &:hover{
-      background-color: rgba(map-get($color, primary), 0.25);
+    &:hover {
+      background-color: rgba(map-get($colors, primary), 0.25);
       &:not(:focus):not(.input-error) {
-        box-shadow: inset 0 -1px 0 0 map-get($color, primary);
+        box-shadow: inset 0 -1px 0 0 map-get($colors, primary);
       }
     }
-    &-nonempty + label{
+    &-nonempty + label {
       transform: scale(0.7) translate(-10px, -16px);
     }
-    &-error{
-      box-shadow: inset 0 -1px 0 0 map-get($color, error);
+    &-error {
+      box-shadow: inset 0 -1px 0 0 map-get($colors, error);
     }
   }
-  label{
+  label {
     position: absolute;
     top: 12px;
     left: 16px;
     line-height: 1.5;
     user-select: none;
     cursor: text;
-    color: map-get($color, label);
+    color: map-get($colors, label);
   }
-  .error{
+  .error {
     margin-top: 6px;
-    color: map-get($color, error);
     display: flex;
     gap: 4px;
     align-content: center;
-    &__message{
+    color: map-get($colors, error);
+    &__message {
       font-size: 13px;
     }
   }

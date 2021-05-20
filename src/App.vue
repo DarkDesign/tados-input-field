@@ -2,29 +2,29 @@
   <div id="app">
     <div class="inputList">
       <div class="inputList__item">
-        <input-filed
+        <input-field
             v-model="value"
             :label="`Label`"
-        ></input-filed>
+        ></input-field>
       </div>
       <div class="inputList__item">
-        <input-filed
+        <input-field
             v-model="value"
             :label="`Label`"
             :required="true"
-        ></input-filed>
+        ></input-field>
       </div>
       <div class="inputList__item">
-        <input-filed
+        <input-field
             v-model="value"
             :label="`Label`"
-        ></input-filed>
+        ></input-field>
       </div>
       <div class="inputList__item">
-        <input-filed
+        <input-field
             :value="'ValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValue'"
             :label="`Label`"
-        ></input-filed>
+        ></input-field>
       </div>
     </div>
 
@@ -33,10 +33,10 @@
 
 <script>
 
-import InputFiled from "./components/input-filed";
+import InputField from "./components/input-field";
 export default {
   name: 'App',
-  components: {InputFiled},
+  components: {InputField},
   data:function (){
     return {
       value: ''
